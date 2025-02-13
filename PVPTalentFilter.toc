@@ -7,7 +7,7 @@
 ## IconTexture: Interface\Icons\Achievement_Arena_3v3_5.PNG
 
 ## X-Curse-Project-ID: 1199191
-## X-WoWI-ID: 
+## X-WoWI-ID: 26902
 ## X-Wago-ID: 4N2mo0GL
 
 ## SavedVariables: PTF_HiddenTalents
