@@ -111,6 +111,5 @@ function createHideButton(talentButton)
 
 	button:SetScript("OnClick", function()
 		configureTalentButtonVisibility(talentButton, true)
-		--print("Honor TalentID|cffffff00", talentButton.talentID, "|rhidden...")
 	end)
 end
