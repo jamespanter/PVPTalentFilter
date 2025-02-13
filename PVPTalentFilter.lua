@@ -74,7 +74,7 @@ function HookPvPTalentList()
 	end)
 
 	-- PlayerSpells is not nil as Blizzard_PlayerSpells has loaded
-	local unhideButton = CreateFrame("Button", "PTFUnHide", pvpTalentList, "UIPanelButtonTemplate")
+	local unhideButton = CreateFrame("Button", "PTFUnhide", pvpTalentList, "UIPanelButtonTemplate")
 	unhideButton:SetSize(80, 30)
 	unhideButton:SetText("Unhide")
 	unhideButton:SetPoint("TOPRIGHT", 0, 25)
@@ -91,11 +91,13 @@ end
 function configureTalentButtonVisibility(talentButton, shouldHide)
 	if shouldHide then
 		talentButton:Hide()
+
 		if not isTalentHidden(talentButton.talentID) then
 			addTalentToHiddenList(talentButton.talentID)
 		end
 	else
 		talentButton:Show()
+
 		if isTalentHidden(talentButton.talentID) then
 			removeTalentFromHiddenList(talentButton.talentID)
 		end
@@ -103,11 +105,19 @@ function configureTalentButtonVisibility(talentButton, shouldHide)
 end
 
 function createHideButton(talentButton)
+	-- Check if the button already exists to avoid creating a new one every time
+	if talentButton.hideButton then
+		return -- If the hide button exists, exit the function
+	end
+
 	-- PlayerSpells is not nil as Blizzard_PlayerSpells has loaded
 	local button = CreateFrame("Button", talentButton.talentID, talentButton, "UIPanelButtonTemplate")
 	button:SetSize(20, 20)
 	button:SetText("x")
 	button:SetPoint("RIGHT", 0, 0)
+
+	-- Store the button reference in talentButton to reuse it next time
+	talentButton.hideButton = button
 
 	button:SetScript("OnClick", function()
 		configureTalentButtonVisibility(talentButton, true)
