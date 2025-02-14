@@ -1,7 +1,9 @@
-# PVP Talent Filter
+# PVPTalentFilter
 
 A lightweight addon that allows players to hide PVP talents they never use.
-The addon makes it easier to find the right PVP talent to swap when you enter arena or battlegrounds.
+A quick and convenient way to simplify decision making.
+
+Ideally, this addon will become redundant in the future if Blizzard ensures all PVP talents valuable in some way...
 
 ![Screenshot of hide buttons](https://imgur.com/kyda67M.png)
 ![Screenshot showing hidden talents](https://imgur.com/YBEYHnC.png)
